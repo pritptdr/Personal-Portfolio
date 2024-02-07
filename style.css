@@ -314,44 +314,6 @@ section {
   margin: auto 0;
 }
 
-/* EXPERIENCE SECTION */
-
-#experience {
-  position: relative;
-}
-
-.experience-sub-title {
-  color: rgb(85, 85, 85);
-  font-weight: 600;
-  font-size: 1.75rem;
-  margin-bottom: 2rem;
-}
-
-.experience-details-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.article-container {
-  display: flex;
-  text-align: initial;
-  flex-wrap: wrap;
-  flex-direction: row;
-  gap: 2.5rem;
-  justify-content: space-around;
-}
-
-article {
-  display: flex;
-  width: 10rem;
-  justify-content: space-around;
-  gap: 0.5rem;
-}
-
-article .icon {
-  cursor: default;
-}
 
 /* PROJECTS SECTION */
 
@@ -379,6 +341,42 @@ article .icon {
   color: black;
   border-color: rgb(163, 163, 163);
 }
+
+/* Add a transition effect to smoothly animate changes */
+.details-container {
+  position: relative;
+  overflow: hidden; /* Hide overflow to prevent content from overflowing */
+}
+
+/* Define the style of the additional content */
+.project-details {
+  position: absolute;
+  bottom: 0; /* Initially positioned below the container */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8); /* semi-transparent white background */
+  opacity: 0; /* initially hidden */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Add transition for opacity and transform */
+  transform: translateY(100%); /* Move the content below the container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Show the project details when hovering over the container */
+.details-container:hover .project-details {
+  opacity: 1;
+  transform: translateY(0); /* Move the content upward */
+}
+
+/* Adjust the z-index to ensure the details appear above other elements */
+.details-container:hover {
+  z-index: 1;
+}
+
+
 
 /* CONTACT */
 
