@@ -66,6 +66,8 @@ a:hover {
   cursor: default;
 }
 
+
+
 /* HAMBURGER MENU */
 
 #hamburger-nav {
@@ -188,6 +190,8 @@ section {
 .section__text__p1 {
   text-align: center;
 }
+
+
 
 .section__text__p2 {
   font-size: 1.75rem;
@@ -342,22 +346,23 @@ section {
   border-color: rgb(163, 163, 163);
 }
 
-/* Add a transition effect to smoothly animate changes */
+/* Details container for transition */
 .details-container {
   position: relative;
-  overflow: hidden; /* Hide overflow to prevent content from overflowing */
+  overflow: hidden; 
 }
 
-/* Define the style of the additional content */
+/* Style for the transition content */
 .project-details {
   position: absolute;
   bottom: 0; /* Initially positioned below the container */
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.8); /* semi-transparent white background */
+  background: linear-gradient(rgba(0,0,0,0.6),#ff004f); /* Add linear gradient background */
+  /*color: black; */ /* Set text color to white */
   opacity: 0; /* initially hidden */
-  transition: opacity 0.3s ease, transform 0.3s ease; /* Add transition for opacity and transform */
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease; /* Add transition for opacity, transform, and background */
   transform: translateY(100%); /* Move the content below the container */
   display: flex;
   justify-content: center;
@@ -369,13 +374,18 @@ section {
 .details-container:hover .project-details {
   opacity: 1;
   transform: translateY(0); /* Move the content upward */
+  background: linear-gradient(rgba(0,0,0,0.6),#ff004f); /* Change background color */
 }
 
+
 /* Adjust the z-index to ensure the details appear above other elements */
-.details-container:hover {
+.details-container:hover .project-img {
   z-index: 1;
 }
 
+.layer-text{
+  color: black;
+}
 
 
 /* CONTACT */
